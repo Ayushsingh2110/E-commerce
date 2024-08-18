@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-canceling headphones with high-fidelity sound and comfortable ear cushions.",
+      "price": 129.99,
+      "image": "https://example.com/images/headphones.jpg",
+      "rating": 4.5,
+      "tags": ["electronics", "headphones", "wireless", "audio"],
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Smartphone Holder for Car",
+      "description": "Adjustable car mount for smartphones, compatible with all models and easy to install.",
+      "price": 19.99,
+      "image": "https://example.com/images/car-holder.jpg",
+      "rating": 4.2,
+      "tags": ["electronics", "car accessories", "smartphone", "gadgets"],
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Stainless Steel Coffee Maker",
+      "description": "Durable coffee maker with a capacity of 10 cups, ideal for home or office use.",
+      "price": 39.99,
+      "image": "https://example.com/images/coffee-maker.jpg",
+      "rating": 4.0,
+      "tags": ["kitchen appliances", "coffee", "home", "office"],
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Fitness Tracker Watch",
+      "description": "Waterproof fitness watch with heart rate monitor and GPS tracking.",
+      "price": 79.99,
+      "image": "https://example.com/images/fitness-tracker.jpg",
+      "rating": 4.3,
+      "tags": ["electronics", "wearables", "fitness", "health"],
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Portable Bluetooth Speaker",
+      "description": "Compact speaker with powerful sound, Bluetooth connectivity, and long battery life.",
+      "price": 49.99,
+      "image": "https://example.com/images/bluetooth-speaker.jpg",
+      "rating": 4.4,
+      "tags": ["electronics", "speakers", "portable", "audio"],
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Professional Chef Knife",
+      "description": "High-quality stainless steel knife for precision cutting, ergonomic handle for comfort.",
+      "price": 69.99,
+      "image": "https://example.com/images/chef-knife.jpg",
+      "rating": 4.7,
+      "tags": ["kitchenware", "cooking", "knives", "chef"],
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "name": "Leather Laptop Bag",
+      "description": "Genuine leather laptop bag with multiple compartments and padded interior for protection.",
+      "price": 129.99,
+      "image": "https://example.com/images/laptop-bag.jpg",
+      "rating": 4.6,
+      "tags": ["fashion", "accessories", "laptop", "business"],
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "name": "Wireless Charging Pad",
+      "description": "Qi-certified wireless charging pad compatible with all Qi-enabled devices.",
+      "price": 29.99,
+      "image": "https://example.com/images/wireless-charger.jpg",
+      "rating": 4.1,
+      "tags": ["electronics", "gadgets", "wireless charging", "technology"],
+      "inStock": true
+    },
+    {
+      "id": 9,
+      "name": "Yoga Mat with Carry Strap",
+      "description": "Non-slip yoga mat with a comfortable cushion and easy-to-carry strap.",
+      "price": 34.99,
+      "image": "https://example.com/images/yoga-mat.jpg",
+      "rating": 4.5,
+      "tags": ["sports", "fitness", "yoga", "exercise"],
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "name": "Smart Home Security Camera",
+      "description": "HD security camera with motion detection, night vision, and two-way audio.",
+      "price": 89.99,
+      "image": "https://example.com/images/security-camera.jpg",
+      "rating": 4.3,
+      "tags": ["electronics", "security", "smart home", "surveillance"],
+      "inStock": true
+    }
+  ]  
+}
