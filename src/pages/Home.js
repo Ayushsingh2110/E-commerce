@@ -1,36 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import ProductCard from '../components/productCard';
 import { Link } from "react-router-dom";
-
+import { getData } from '../utils/server';
 const Home = () => {
-    const [ProductList, setProductList] = useState([]);
-    async function getData() {
-        try {
-            const res = await fetch("http://localhost:4000/products", {
-                method: "GET",
-            });
-
-            if (!res.ok) {
-                return [];
-            }
-
-            const products = await res.json()
-            if (Array.isArray(products)) {
-                return products;
-            }
-
-            return [];
-        } catch (error) {
-            alert(error.message);
-        }
-    }
+    const [ProductList, setProductList] = useState([]); //this variable will store data coming from server
 
     useEffect(() => {
         async function onLoad() {
-            const data = await getData();
+            const data = await getData("http://localhost:4000/products"); //getData() function gets called everytime page loads to get data
             setProductList(data);
         }
-        onLoad();
+        onLoad(); //this function executes actions on every page load
     }, []);
 
     return (
@@ -44,7 +24,7 @@ const Home = () => {
                         (
                             ProductList.map((product, index) => {
                                 return (
-                                    <Link key={index} to={`/${product?.id}`} className="card_link">
+                                    <Link key={index} to={`product/${product?.id}`} className="card_link">
                                         <ProductCard productData={product} />
                                     </Link>
                                 )
