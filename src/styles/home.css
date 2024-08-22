@@ -1,0 +1,12 @@
+.home_container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 50px;
+    justify-content: center;
+}
+
+.card_link{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,31 @@
+.product_container{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+}
+
+.product_image--container{
+    min-width: 280px;
+    object-fit: cover;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.product_image{
+    width: 100%;
+}
+
+.product_content--container{
+    min-width: 280px;
+}
+
+@media screen and (max-width: 780px){
+    .product_container{
+        flex-wrap: wrap;
+    }
+
+    .product_image--container{
+        margin: auto;
+    }
+
+}
