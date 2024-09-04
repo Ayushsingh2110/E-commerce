@@ -9,6 +9,7 @@ const Product = () => {
   const { id } = useParams();
   const [ProductData, setProductData] = useState({}); //this variable will store data coming from server
   const [Error, setError] = useState(false); //this variable is to return an Error page if value is true
+  let [ProductQuantity, setProductQuantity] = useState(1);
 
   useEffect(() => {
     async function onLoad() {
@@ -21,6 +22,19 @@ const Product = () => {
     }
     onLoad(); //this function executes actions on every page load
   }, [id]);
+
+  function handleQuantity(e){
+    e.preventDefault()
+    if(e.target.innerText === "-" && e.target.id === "quantityMinus" && ProductQuantity > 1){
+      setProductQuantity(--ProductQuantity);
+    }
+    if(e.target.innerText === "+" && e.target.id === "quantityPlus" && 
+      (ProductData?.available_units ? ProductQuantity < ProductData.available_units : true)){
+        
+      setProductQuantity(++ProductQuantity);
+    }
+    
+  }
 
   if(Error){
     return (
@@ -35,9 +49,16 @@ const Product = () => {
           <img className="product_image" src="https://tse4.mm.bing.net/th?id=OIP.dB-Vbafoy4ZOavlv_OCUogHaJ4&pid=Api&P=0&h=180" alt={ProductData?.name} />
         </div>
         <div className="product_content--container">
+          {/* <======= NAME =======> */}
           <h1>{ProductData?.name}</h1>
+
+          {/* <======= RATING =======> */}
           <Rating name="read-only" value={ProductData?.rating || 0} readOnly />
+
+          {/* <======= DESCRIPTION =======> */}
           <p className="product_desc">{ProductData?.description || "Product descripton..."}</p>
+
+          {/* <======= TAGS =======> */}
           <div className="product_tags">
             {
               ProductData?.tags?.map((tag, index) => {
@@ -49,10 +70,25 @@ const Product = () => {
               })
             }
           </div>
-          <h3 className="product_price"><CurrencyRupeeIcon />{ProductData?.price || 0}</h3>
-          <div className="product_quantity">
 
+          {/* <======= PRICE =======> */}
+          <h3 className="product_price"><CurrencyRupeeIcon />{(ProductData?.price*ProductQuantity).toFixed(2) || 0}</h3>
+
+          {/* <======= QUANTITY =======> */}
+          <div className="product_quantity">
+            <button className="minus" id="quantityMinus" onClick={handleQuantity} disabled={ProductQuantity <= 1 ? "True":""}>
+              -
+            </button>
+            <span className="value">{ProductQuantity}</span>
+            <button className="plus" id="quantityPlus" onClick={handleQuantity}>+</button>
           </div>
+
+          {/* <======= ADD TO CART && BOOK BUTTON =======> */}
+          <div className="product_action">
+            <button className="add-to-cart">Add to cart</button>
+            <button className="buy">Buy Now</button>
+          </div>
+
         </div>
       </div>
     </div>

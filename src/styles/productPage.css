@@ -19,6 +19,69 @@
     min-width: 280px;
 }
 
+.product_quantity{
+    margin: 20px 0;
+}
+.product_quantity button{
+    height: 2rem;    
+    width: 2rem;
+    background: none; 
+    border-radius: 50%;
+    border: 1px solid hsl(0, 100%, 73%);
+    font-size: 1.5rem;  
+    text-align: center;
+    cursor: pointer;
+}
+
+.product_quantity button:disabled{
+    opacity: .5;
+    cursor:not-allowed;
+}
+
+.product_quantity .value{
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+
+}
+
+.product_action{
+    display: flex;
+    gap: .5rem;
+}
+.product_action button:first-child{
+    padding: 1rem 1.25rem;
+    border: none;
+    background-color: hsl(0, 100%, 73%);
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+    box-shadow: black 1px 1px 1px;
+}
+.product_action button:first-child:active{
+    box-shadow: none;
+}
+
+.product_action button:last-child{
+    padding: 1rem 1.25rem;
+    border: 1px solid hsl(0, 100%, 73%);
+    background: transparent;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: larger;
+    transition: .2s ease-in;
+    cursor: pointer;
+    box-shadow: black 1px 1px 1px;
+}
+.product_action button:last-child:hover{
+    background-color: hsl(0, 100%, 73%);
+}
+.product_action button:last-child:active{
+    box-shadow: none;
+}
+
 @media screen and (max-width: 780px){
     .product_container{
         flex-wrap: wrap;
