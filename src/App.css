@@ -1,3 +1,14 @@
+/*<========= DEFAULT =========>*/
+:root{
+    /*FONT SIZE*/
+    --title-size: 2rem;
+
+    /*THEME COLORS*/
+    --theme-1: hsl(47, 100%, 61%);
+    --theme-1-light: hsl(47, 100%, 85%);
+    --theme-2: hsl(0, 100%, 73%);
+}
+
 /*<========= REUSABLE ========>*/
 .container{
     width:100%;
@@ -5,6 +16,9 @@
     place-items: center;
     padding: 70px;
 }
+
+/*<========= HEADER ========>*/
+@import "./styles/header.css";
 
 /*<========= HOME ========>*/
 @import "./styles/home.css";

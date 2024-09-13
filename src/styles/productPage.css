@@ -27,7 +27,7 @@
     width: 2rem;
     background: none; 
     border-radius: 50%;
-    border: 1px solid hsl(0, 100%, 73%);
+    border: 1px solid var(--theme-2);
     font-size: 1.5rem;  
     text-align: center;
     cursor: pointer;
@@ -53,7 +53,7 @@
 .product_action button:first-child{
     padding: 1rem 1.25rem;
     border: none;
-    background-color: hsl(0, 100%, 73%);
+    background-color: var(--theme-2);
     border-radius: 1rem;
     font-weight: bold;
     font-size: larger;
@@ -66,7 +66,7 @@
 
 .product_action button:last-child{
     padding: 1rem 1.25rem;
-    border: 1px solid hsl(0, 100%, 73%);
+    border: 1px solid var(--theme-2);
     background: transparent;
     border-radius: 1rem;
     font-weight: bold;
@@ -76,7 +76,7 @@
     box-shadow: black 1px 1px 1px;
 }
 .product_action button:last-child:hover{
-    background-color: hsl(0, 100%, 73%);
+    background-color: var(--theme-1);
 }
 .product_action button:last-child:active{
     box-shadow: none;
