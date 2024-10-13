@@ -4,12 +4,15 @@ import Rating from '@mui/material/Rating';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import ErrorPage from './ErrorPage';
 import { getData } from '../utils/server';
+import { useCart } from '../contexts/cartContext';
 
 const Product = () => {
   const { id } = useParams();
   const [ProductData, setProductData] = useState({}); //this variable will store data coming from server
   const [Error, setError] = useState(false); //this variable is to return an Error page if value is true
-  let [ProductQuantity, setProductQuantity] = useState(1);
+  let [ProductQuantity, setProductQuantity] = useState(ProductData.selectedQuantity ? ProductData.selectedQuantity : 1);
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     async function onLoad() {
@@ -33,12 +36,16 @@ const Product = () => {
         
       setProductQuantity(++ProductQuantity);
     }
-    
   }
 
-  if(Error){
+  function AddProductToCart() {
+    ProductData.selectedQuantity = ProductQuantity
+    addToCart({ id: ProductData.id, image: ProductData.image, name : ProductData.name, unitCount: ProductData.unitCount, selectedQuantity: ProductData.selectedQuantity})
+  }
+
+  if (Error) {
     return (
-      <ErrorPage message={"Data not found"} statusCode={"404"}/>
+      <ErrorPage message={"Data not found"} statusCode={"404"} />
     )
   }
 
@@ -80,12 +87,14 @@ const Product = () => {
               -
             </button>
             <span className="value">{ProductQuantity}</span>
-            <button className="plus" id="quantityPlus" onClick={handleQuantity}>+</button>
+            <button className="plus" id="quantityPlus" onClick={handleQuantity} disabled={ProductQuantity >= ProductData.unitCount ? "True" : ""}>
+              +
+            </button>
           </div>
 
           {/* <======= ADD TO CART && BOOK BUTTON =======> */}
           <div className="product_action">
-            <button className="add-to-cart">Add to cart</button>
+            <button className="add-to-cart" onClick={AddProductToCart}>Add to cart</button>
             <button className="buy">Buy Now</button>
           </div>
 
